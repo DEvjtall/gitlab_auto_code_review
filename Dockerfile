@@ -9,7 +9,7 @@ RUN go env -w GO111MODULE=on \
         && go build -o code-review main.go
 
 # 执行过程
-FROM apline:latest
+FROM alpine:latest
 WORKDIR /app
 COPY --from=builder code-review .
 COPY --from=builder config/config.ini ./config/
