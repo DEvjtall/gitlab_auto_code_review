@@ -11,6 +11,6 @@ RUN go env -w GO111MODULE=on \
 # 执行过程
 FROM alpine:latest
 WORKDIR /app
-COPY --from=builder code-review .
-COPY --from=builder config/config.ini ./config/
+COPY --from=builder /app/code-review .
+COPY --from=builder /app/config/config.ini ./config/
 CMD ["./code-review"]
